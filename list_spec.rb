@@ -21,6 +21,14 @@ describe List do
       list.add_task("dave")
       expect(list.tasks.include?("dave")).to eq(true)
     end
+
+    it "argument error, receiving more than it needs" do 
+      expect{list.add_task("hades" ,"zeus")}.to raise_error(ArgumentError)
+    end   
+    
+    it "receives type error" do 
+      expect{list.add_task(1)}.to raise_error(TypeError, 'qwe')
+    end
   end
 
   context "#complete_task" do 

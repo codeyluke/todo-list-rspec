@@ -7,7 +7,11 @@ class List
   end
 
   def add_task(task)
-    tasks << task
+    if task.is_a? String
+      tasks << task
+    else 
+      raise TypeError, "qwe"
+    end
   end
 
   def complete_task(index)
